@@ -2,26 +2,102 @@
 <html>
 <head>
 <style>
-body {
-  background-color: lightblue;
+  body{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+.resume {
+    display: grid;
+    width  : 180mm;
+    height: 250.5mm;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows   : 0fr 0fr 0fr 0fr 0fr;
+    grid-template-areas  :
+        "photo name"
+        "about summary"
+        "about education"
+        "about skills"
+        "about footer";
 }
-
-h1 {
-  color: white;
-  text-align: center;
+.grid-area {
+    padding: 1em 1em 1em 1em;
 }
-
-p {
-  color: blue;
-  font-family: Times New Roman;
-  font-size: 25px;
+.name {
+    grid-area       : name;
+    background-color: rgb(96, 96, 97);
+    font-size: 30px;
+}
+.photo {
+    grid-area       : photo;
+    background-color:   rgb(96, 96, 97);
+    padding-left: 40px;
+    justify-self: streth;
+}
+.about {
+    grid-area       : about;
+    background-color: lightgrey;
+    text-align: center;
+}
+.summary {
+    grid-area: summary;
+    background-color: white;
+    text-align: justify;
+}
+.education {
+    grid-area: education;
+    background-color: white;
+}
+.skills {
+    grid-area: skills;
+    background-color: white;
+}
+.footer {
+    grid-area: footer;
+    background-color: white;
+    font-size: 10px;
+    align-self: end;
+    padding: 15px;
+}
+.wrapper {
+    padding       : 0;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+}
+naglowki {
+  font-family: New Times Roman;
+  font-size: 18px;
+  color:black;
+  text-align: left;
+  font-weight: bold;
+}
+daty{
+  font-weight: bold;
 }
 </style>
 </head>
 <body>
-
-<h1>My First CSS Example</h1>
-<p>Hello world</p>
-
+<main class="wrapper">
+    <article class="resume">
+        <section class="grid-area name">Emilia Krupa<br>CV</section>
+        <section class="grid-area photo"><img height="110" width="77"  src="zdj 2.jpg"></section>
+        <section class="grid-area about"><br>Data Urodzenia<br>19.03.2000r<hr><br>Adres<br>ul. Witolda Budryka 5<br> 30-072 Kraków<hr><br>Telefon<br>695 408 434<hr><br>E-mail<br><a href="default.asp" target="_blank">krupaemilia000@gmail.pl</a></section>
+        <section class="grid-area summary"><hr><naglowki>Podsumowanie</naglowki><hr>Aktualnie jestem studentką drugiego roku Informatyki i Ekonometrii na Akademii Górniczo-Hutniczej w Krakowie. Jestem osobą otwartą na nowe doświadczenia, jestem dokładna, sumienna, szybko i chętnie uczę się nowych rzeczy oraz bardzo lubię pracę w zespole. Chciałabym nabyć jak najwięcej doświadczenia oraz rozwijać się w Państwa firmie.</section>
+        <section class="grid-area skills"><hr><naglowki>Umiejętności</naglowki><hr><ul>
+        <li>Posiadam wiedzę teoretyczną jak i praktyczną w zakresie:<ul style="list-style-type: circle">
+        <li>analizy danych
+        <li>zarządzania projektami</ul>
+        <li>SQL
+        <li>C#
+        <li>Excel	
+        <li>posiadam również podstawową wiedzę z zakresu księgowości
+        <li>przeprowadziłam dwa projekty, które opierały się na badaniu statystycznym i analizie danych
+        <li>angielski – B2</ul></section>
+        <section class="grid-area education"><hr><naglowki>Wykształcenie</naglowki><hr>
+        <li><daty>10/2019 - obecnie</daty> –	Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie, wydział zarządzania, kierunek: Informatyka i ekonometria, studia licencjackie.</li><br>
+        <li><daty>09/2016 - 06/2019</daty> – 	I Liceum Ogólnokształcące im. Mikołaja Kopernika w Krośnie, profil matematyczno-fizyczno-informatyczny.</li></ul></section> 
+        <section class="grid-area footer">Wyrażam zgodę na przetwarzanie moich danych osobowych przez (nazwa firmy) w celu prowadzenia rekrutacji na aplikowane przeze mnie stanowisko.</section> 
+    </article>
+</main>
 </body>
 </html>
