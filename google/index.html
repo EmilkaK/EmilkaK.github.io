@@ -5,41 +5,44 @@
         <title>Google</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="style2.css">
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+            <script src="vue.js" defer></script>
     </head>
-    <body class="results">
-        <div class="up">
-            <div class="up_items">
-                <napisyup>Gmail</napisyup>
-                <napisyup >Grafika</napisyup>
-                <kropki><img class="dots" src="kropki2.png"></kropki>
-                <zaloguj>Zaloguj się</zaloguj>
-            </div>                
-        </div>
+    <body>
+        <div id="app" :class="[googleSearch != '' ? 'results' : 'main']"> 
+            <div class="up">
+                <div class="up_items">
+                    <napisyup>Gmail</napisyup>
+                    <napisyup >Grafika</napisyup>
+                    <kropki><img class="dots" src="kropki2.png"></kropki>
+                    <zaloguj>Zaloguj się</zaloguj> 
+                </div>            
+            </div>
 
-        <div class="srodek">
-            <div class="logo">
-                <img class="google" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" height="92" width="272">
-            </div>
-            <div class="search">
-                <div class="write">
-                    <div class="wyszukiwacz">
-                        <img class="lupa" src="lupa.png">
-                        <input type="search" maxlength="2048" title="Szukaj"value="jakiś wynik google">
-                        <img class="iks" src="iks.png">
-                        <span class="kreska"></span>
-                        <img class="mikrofon" src="mikrofon.png">
-                        <img class="klaw" src="klawiatura.png">
-                        <img class="lupa2" src="lupa2.png">                   
+            <div class="srodek">
+                <div class="logo">
+                    <img class="google" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" height="92" width="272">
+                </div>
+                <div class="search">
+                    <div class="write">
+                        <div class="wyszukiwacz">
+                            <img class="lupa" src="lupa.png">
+                            <input v-model="googleSearch" type="search" maxlength="2048" title="Szukaj">
+                            <img class="iks" src="iks.png">
+                            <span class="kreska"></span>
+                            <img class="mikrofon" src="mikrofon.png">
+                            <img class="klaw" src="klawiatura.png">
+                            <img class="lupa2" src="lupa2.png">                   
+                        </div>
+                    </div>
+                    <div class="przyciski">
+                        <div class="button">
+                            <button class="przycisk1" type="button">Szukaj w Google</button>
+                            <button class="przycisk2" type="button">Szczęśliwy traf</button>
+                        </div>
                     </div>
                 </div>
-                <div class="przyciski">
-                    <div class="button">
-                        <button class="przycisk1" type="button">Szukaj w Google</button>
-                        <button class="przycisk2" type="button">Szczęśliwy traf</button>
-                    </div>
-                </div>
-            </div>
-        </div>         
+            </div>         
 
             <div class="aplikacje">
                 <div class="apki">
@@ -289,21 +292,22 @@
                 <div class="polska">Polska</div>
                 <div class="dolnapisy">
                     <div class="dolnapisy1">
-                    <dolnapisy1>O nas</dolnapisy1>
-                    <dolnapisy1>Reklamuj się</dolnapisy1>
-                    <dolnapisy1>Dla firm</dolnapisy1>
-                    <dolnapisy1>Jak działa wyszukiwarka</dolnapisy1>
+                        <dolnapisy1>O nas</dolnapisy1>
+                        <dolnapisy1>Reklamuj się</dolnapisy1>
+                        <dolnapisy1>Dla firm</dolnapisy1>
+                        <dolnapisy1>Jak działa wyszukiwarka</dolnapisy1>
                     </div>                    
-                <div class="neutralnosc">
-                    <div class="neutral">                     
-                        <img class = "listek" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC">
-                        <a class="neutraltekst" color=blue;>Neutralność węglowa od 2007 roku</a>
-                    </div>
-                </div>   
+                    <div class="neutralnosc">
+                        <div class="neutral">                     
+                            <img class = "listek" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC">
+                            <a class="neutraltekst" color=blue;>Neutralność węglowa od 2007 roku</a>
+                        </div>
+                    </div>   
                     <div class="dolnapisy2">
-                    <dolnapisy1>Prywatność</dolnapisy1>
-                    <dolnapisy1>Warunki</dolnapisy1>
-                    <dolnapisy1>Ustawienia</dolnapisy1></div>
+                        <dolnapisy1>Prywatność</dolnapisy1>
+                        <dolnapisy1>Warunki</dolnapisy1>
+                        <dolnapisy1>Ustawienia</dolnapisy1>
+                    </div>
                 </div>
                 <div class="links2">
                     <div class="elementy_dolne">
@@ -314,6 +318,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </body>   
 </html>
 
