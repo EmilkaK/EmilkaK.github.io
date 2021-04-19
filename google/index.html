@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="style2.css">
             <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-            <script src="vue.js" defer></script>
+            <script src="cities.js" ></script>
+
     </head>
     <body>
         <div id="app" :class="[googleSearch != '' ? 'results' : 'main']"> 
@@ -82,10 +83,22 @@
             <span class="kreska_pozioma"></span>
     
             <div class="ilosc_wynikow">
-                Około 15 200 000 wyników (0,45 s)
+                Około 15 200 000 wyników (0,45 s)<br><br>
+
+                <div class="vue-cities">
+                    <p>Miasta zawierające "{{ googleSearch }}":</p><br>
+                    <ul>
+                        <li v-for="city in filteredCities">					
+                            {{ city.name }}<br>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+            
+
     
-            <div class="zawartosc">
+            <div class="zawartosc" style="margin-top:230px;">
     
                 <div class="wynik">
                     <div class="naglowek">
@@ -319,6 +332,28 @@
                 </div>
             </div>
         </div>
+        <script>
+            var app = new Vue({
+        el: '#app',
+        data: {
+          googleSearch: '',
+          cities: window.cities,
+        },
+        
+        computed: {
+                        filteredCities: function() {
+                            let results = this.cities.filter(city => city.name.includes(this.googleSearch));
+                            return results.slice(0,10);
+                        }
+                    },
+                    updated() {
+                        this.$nextTick(() => {
+                            this.$refs.inputFocus.focus();
+                        });
+                    }
+                
+      });
+        </script>
     </body>   
 </html>
 

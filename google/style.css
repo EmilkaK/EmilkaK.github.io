@@ -47,6 +47,10 @@
 {
     display: none;
 }
+.main .vue-cities
+{
+display:none;
+}
 
 
 .main .up
@@ -358,6 +362,7 @@
         padding: 0 20px;
         text-align: center;
     }
+    
 }
 
 

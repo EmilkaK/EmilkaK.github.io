@@ -225,6 +225,7 @@
     order: 1;
 }
 
+
 .results .write:hover,
 .results .write:focus {
     box-shadow: 0 0 0.3em 0.1em #d9d9d9;
@@ -384,4 +385,20 @@
 {
     padding-right: 15px;
     padding-top: 6px;
+}
+ul li::before {
+    content: "\2022";
+    color: pink;
+    font-family: arial,sans-serif;
+}
+.results .vue-cities{
+    font-family: arial,sans-serif;
+    font-size:130%;
+    padding-bottom: 7px;
+    padding-top: 3px;
+    line-height: 25px;
+    padding-bottom: 80px;
+    line-height: 20px;
+    font-size: 15px;
+    list-style: no
 }
